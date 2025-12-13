@@ -1,0 +1,218 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,regular,500,600,700,800,900);
+
+:root {
+   --score-font: "Orbitron", sans-serif;
+   --heading-font: "Roboto Slab", sans-serif;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body,
+html {
+   height: 100vh;
+   width: 100%;
+}
+
+#section-00 {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   row-gap: 20px;
+   height: 100vh;
+   width: 100%;
+   margin-top: -30px;
+}
+
+#section-01 {
+   height: 100vh;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.button {
+   height: 30%;
+   padding: 30% 20vw;
+}
+
+
+/* CSS FOR MOBILE VIEW  */
+
+@media screen and (max-width: 768px) {
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+   }
+
+   body,
+   html {
+      scroll-behavior: smooth; /* Smooth scrolling */
+      scroll-snap-type: y mandatory; /* Y-axis snap scrolling */
+      overflow-y: scroll;
+   }
+
+   body{
+      background-image: url(../Images/table-bg.webp);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+   }
+
+   #section-00 {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      scroll-snap-align: start;
+      /* background-color:#1E2019; */
+      /* background-color:greenyellow; */
+   }
+
+   #section-01 {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: start;
+      /* background-color: purple; */
+   }
+
+   #section-01 input{
+      width: 100px;
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 10px;
+      border-radius: 10px;
+   }
+   #section-01 button{
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 10px;
+      background-color: darkorange;
+      color: white;
+      font-weight: 800;
+   }
+   
+   #section-01-div {
+      height: 95vh;
+   }
+
+   .button {
+      padding: 10px 100px;
+      text-align: center;
+      font-size: 6em;
+      border: none;
+      border-radius: 10px;
+      font-weight: 900;
+      font-family: var(--score-font);
+      box-shadow: 0 0 30px rgba(218, 192, 32, 0.8);
+      &:active{
+         transform: scale(90%);
+         transition: all 0.2s ease-in-out;
+      }
+   }
+
+   #clearCacheButton:active {
+      transform: scale(90%);
+      transition: all 0.2s ease-in-out;
+   }
+
+   #team-a {
+      background-color: rgba(255, 0, 0, 0.8);
+      color: white;
+      margin-bottom: 20px;
+   }
+   #label-team-a {
+      transform: rotate(180deg);
+   }
+   #team-b {
+      background-color: rgba(218, 192, 32, 0.8);
+      color: white;
+   }
+
+   label {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: var(--heading-font);
+color:white;
+   }
+
+   .score-text {
+      transform: rotate(270deg);
+   }
+
+   .bottom-area {
+      display: flex;
+      /* align-items: stretch; */
+      justify-content: space-evenly;
+      width: 100%;
+   }
+   #reset-btn {
+      /* width: ; */
+      padding: 10px;
+      border: 1px solid;
+      border-radius: 50%;
+      background-color: black;
+      color: white;
+   }
+   h2{
+       color:antiquewhite;
+   }
+
+   /* chat gpt */
+   #previous-scores {
+   margin-top: 30px;
+   padding: 15px;
+   border-top: 2px solid rgba(255, 255, 255, 0.3);
+   width: 80%;
+   max-width: 500px;
+   color: white;
+   font-family: var(--heading-font);
+   text-align: left;
+}
+
+#previous-scores h3 {
+   margin-bottom: 10px;
+   font-size: 1.3rem;
+   color: #ffd700;
+}
+
+#score-history {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   font-size: 1rem;
+}
+
+#score-history li {
+   margin: 5px 0;
+   padding: 6px 10px;
+   background: rgba(255, 255, 255, 0.1);
+   border-radius: 6px;
+}
+
+#score-history li.divider {
+   margin: 12px 0;
+   padding: 6px;
+   text-align: center;
+   color: #ffcc00;
+   font-weight: 700;
+   font-size: 1.1rem;
+   border-top: 2px dashed rgba(255,255,255,0.4);
+   border-bottom: 2px dashed rgba(255,255,255,0.4);
+}
+
+}
+

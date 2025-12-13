@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Score Counter</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+   <!-- bootstrap icons -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <link rel="manifest" href="/manifest.json" />
+   <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+   <section class="section" id="section-00">
+      <label id="label-team-a" for="team-a">Team-A</label>
+      <button class="button" id="team-a" onclick="team_a()">
+         <p class="score-text" id="team_a_score">0</p>
+      </button>
+      <button class="button" id="team-b" onclick="team_b()">
+         <p class="score-text" id="team_b_score">0</p>
+      </button>
+      <div class="bottom-area">
+         <label id="label-team-b" for="team-b">Team-B</label>
+         <button id="reset-btn" ondblclick="rst_btn()">Reset</button>
+      </div>
+   </section>
+   <!-- section 01 -->
+   <section class="section" id="section-01">
+
+      <h2>Best Of Setup</h2>
+      <label for="best-of">Enter Best Of:</label>
+      <input type="number" id="best-of" min="1" step="2" value="3" />
+      <button onclick="setBestOf()">Set Game</button>
+
+      <div id="previous-scores">
+         <h3>Previous Rounds</h3>
+         <ul id="score-history"></ul>
+      </div>
+
+
+      <button id="clearCacheButton" title="Update Button"><i class="bi bi-cloud-download-fill"></i></button>
+      <p style="color: white;">click button and restart app</p>
+   </section>
+
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="js/script.js"></script>
+   <script>
+      // Service Worker Registration Code
+      if ('serviceWorker' in navigator) {
+         window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+               .then(reg => console.log('Service Worker: Registered'))
+               .catch(err => console.log(`Service Worker: Error: ${err}`));
+         });
+      }
+   </script>
+</body>
+
+</html>
